@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BITProject.Properties
+namespace WindowsFormsApp1.Properties
 {
 
 

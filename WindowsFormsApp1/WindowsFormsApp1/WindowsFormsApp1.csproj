@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{71D6C267-E33B-42FB-8563-37DD33661522}</ProjectGuid>
+    <ProjectGuid>{029757EA-C456-43C0-821E-A05D43CA970D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BITProject</RootNamespace>
-    <AssemblyName>BITProject</AssemblyName>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,26 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookSearchPage.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookSearchPage.Designer.cs">
-      <DependentUpon>BookSearchPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LogInpage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogInpage.Designer.cs">
-      <DependentUpon>LogInpage.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BookSearchPage.resx">
-      <DependentUpon>BookSearchPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogInpage.resx">
-      <DependentUpon>LogInpage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
