@@ -46,14 +46,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdminLandPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdminLandPage.Designer.cs">
+      <DependentUpon>AdminLandPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeletePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletePage.Designer.cs">
+      <DependentUpon>DeletePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchPage.Designer.cs">
+      <DependentUpon>searchPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogInPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogInPage.Designer.cs">
+      <DependentUpon>UserLogInPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminLandPage.resx">
+      <DependentUpon>AdminLandPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletePage.resx">
+      <DependentUpon>DeletePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +87,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="searchPage.resx">
+      <DependentUpon>searchPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogInPage.resx">
+      <DependentUpon>UserLogInPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
