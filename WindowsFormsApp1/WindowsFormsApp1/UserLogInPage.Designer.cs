@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Admin_LogIn_Submit_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -93,19 +94,31 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Welcome.!";
             // 
+            // Admin_LogIn_Submit_Button
+            // 
+            this.Admin_LogIn_Submit_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_LogIn_Submit_Button.Location = new System.Drawing.Point(320, 336);
+            this.Admin_LogIn_Submit_Button.Name = "Admin_LogIn_Submit_Button";
+            this.Admin_LogIn_Submit_Button.Size = new System.Drawing.Size(156, 32);
+            this.Admin_LogIn_Submit_Button.TabIndex = 16;
+            this.Admin_LogIn_Submit_Button.Text = "Submit";
+            this.Admin_LogIn_Submit_Button.UseVisualStyleBackColor = true;
+            this.Admin_LogIn_Submit_Button.Click += new System.EventHandler(this.Admin_LogIn_Submit_Button_Click);
+            // 
             // UserLogInPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Admin_LogIn_Submit_Button);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "UserLogInPage";
-            this.Text = "Form1";
+            this.Text = "Log In";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +131,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Admin_LogIn_Submit_Button;
     }
 }
 

@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class UserLogInPage : Form
     {
+        public static UserLogInPage userLogInPage;    
         public UserLogInPage()
         {
             InitializeComponent();
@@ -19,6 +20,13 @@ namespace WindowsFormsApp1
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Admin_LogIn_Submit_Button_Click(object sender, EventArgs e)
+        {
+            AdminLandPage adminLandPage = new AdminLandPage();
+            adminLandPage.Show();
 
         }
     }

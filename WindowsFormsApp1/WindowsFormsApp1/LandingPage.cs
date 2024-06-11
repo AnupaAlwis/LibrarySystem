@@ -12,9 +12,20 @@ namespace WindowsFormsApp1
 {
     public partial class LandingPage : Form
     {
+        public static LandingPage instance;
+
         public LandingPage()
         {
             InitializeComponent();
+            instance = this;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            searchPage search = new searchPage();
+            search.Show();
+            
+
         }
     }
 }

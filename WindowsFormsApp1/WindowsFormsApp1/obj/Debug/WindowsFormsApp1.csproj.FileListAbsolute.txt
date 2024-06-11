@@ -1,0 +1,14 @@
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AdminLandPage.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DeletePage.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LandingPage.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.searchPage.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UserLogInPage.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

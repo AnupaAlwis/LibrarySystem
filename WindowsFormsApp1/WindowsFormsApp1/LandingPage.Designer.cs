@@ -40,7 +40,7 @@
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(320, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 53);
+            this.label3.Size = new System.Drawing.Size(189, 52);
             this.label3.TabIndex = 5;
             this.label3.Text = "Welcome.!";
             // 
@@ -53,6 +53,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Reader Login";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
