@@ -119,6 +119,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "UserLogInPage";
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.UserLogInPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

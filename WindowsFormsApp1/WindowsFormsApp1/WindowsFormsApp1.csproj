@@ -64,6 +64,12 @@
     <Compile Include="LandingPage.Designer.cs">
       <DependentUpon>LandingPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReaderLandingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReaderLandingPage.Designer.cs">
+      <DependentUpon>ReaderLandingPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReaderLandingPage.resx">
+      <DependentUpon>ReaderLandingPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchPage.resx">
       <DependentUpon>searchPage.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,29 +10,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class UserLogInPage : Form
+    public partial class ReaderLandingPage : Form
+
     {
-        public static UserLogInPage userLogInPage;    
-        public UserLogInPage()
+        ReaderLandingPage readerLandingPage;
+        public ReaderLandingPage()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Admin_LogIn_Submit_Button_Click(object sender, EventArgs e)
         {
-            AdminLandPage adminLandPage = new AdminLandPage();
-            adminLandPage.Show();
 
         }
 
-        private void UserLogInPage_Load(object sender, EventArgs e)
+        private void UserLogIn_Submit_Button_Click(object sender, EventArgs e)
         {
-
+            searchPage searchPa = new searchPage();
+            searchPa.Show();
         }
     }
 }
