@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
     public partial class DeletePage : Form
     {
+        string server = "localhost";
+        string user = "root";
+        string password = "";
+        string database = "librarymanagementsystem";
         public DeletePage()
         {
             InitializeComponent();
@@ -25,8 +31,8 @@ namespace WindowsFormsApp1
             func = (controls) =>
             {
                 foreach (Control control in controls)
-                    if (control is TextBox)
-                        (control as TextBox).Clear();
+                    if (control is System.Windows.Forms.TextBox)
+                        (control as System.Windows.Forms.TextBox).Clear();
                     else
                         func(control.Controls);
             };
@@ -43,5 +49,33 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = "server=" + server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
+            MySqlConnection con = new MySqlConnection(connectionString);
+            con.Open();
+            //string deleteQuery = "DELETE FROM books WHERE book_id = @book_id AND book_name = @bookName)"; using (MySqlCommand cmd = new MySqlCommand(deleteQuery, con))
+            string deleteQuery = "DELETE FROM books WHERE book_id = @book_id AND book_name = @bookName";
+            using (MySqlCommand cmd = new MySqlCommand(deleteQuery, con))
+            {
+                cmd.Parameters.AddWithValue("@book_id", textBox4.Text);
+                cmd.Parameters.AddWithValue("@bookName", textBox1.Text);
+                //cmd.Parameters.AddWithValue("@bookISBN", textBox2.Text);
+
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    MessageBox.Show("Book Deleted Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("No Book Found with the provided details");
+                }
+            }
+
+            con.Close();
+        }
     }
+    
 }

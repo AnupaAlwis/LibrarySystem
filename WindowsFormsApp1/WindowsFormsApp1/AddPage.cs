@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
                 cmd.Parameters.AddWithValue("@bookAuthor", textBox3.Text);
 
                 int i = cmd.ExecuteNonQuery();
-                MessageBox.Show(i.ToString());
+                MessageBox.Show("Book Added Successfully");
             }
             
         }
