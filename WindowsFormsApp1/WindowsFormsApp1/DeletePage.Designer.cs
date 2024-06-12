@@ -144,6 +144,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "DeletePage";
             this.Text = "Delete ";
+            this.Load += new System.EventHandler(this.DeletePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

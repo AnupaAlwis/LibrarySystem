@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
     public partial class ReaderLandingPage : Form
 
     {
-        ReaderLandingPage readerLandingPage;
         public ReaderLandingPage()
         {
             InitializeComponent();

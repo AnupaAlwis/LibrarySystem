@@ -12,7 +12,6 @@ namespace WindowsFormsApp1
 {
     public partial class AdminLandPage : Form
     {
-        AdminLandPage adminLandPage;
         public AdminLandPage()
         {
             InitializeComponent();

@@ -117,6 +117,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddPage
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "AddPage";
             this.Text = "AddPage";
+            this.Load += new System.EventHandler(this.AddPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
