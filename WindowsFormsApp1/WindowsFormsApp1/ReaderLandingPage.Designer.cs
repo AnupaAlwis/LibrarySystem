@@ -118,6 +118,7 @@
             this.Controls.Add(this.UserName_TextBox);
             this.Name = "ReaderLandingPage";
             this.Text = "ReaderLandingPage";
+            this.Load += new System.EventHandler(this.ReaderLandingPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
