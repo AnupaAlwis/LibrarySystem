@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class AddPage : Form
     {
+        string server = "localhost";
+        string user = "root";
+        string password = "";
+        string database = "librarymanagementsystem";
         public AddPage()
         {
             InitializeComponent();
@@ -42,5 +47,24 @@ namespace WindowsFormsApp1
         {
             ClearTextBoxes();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = "server=" + server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
+            MySqlConnection con = new MySqlConnection(connectionString);
+            con.Open();
+            string addQuery = "INSERT INTO books(book_name, book_isbn, book_author) VALUES (@bookName, @bookISBN, @bookAuthor)";
+            using (MySqlCommand cmd = new MySqlCommand(addQuery, con))
+            {
+                cmd.Parameters.AddWithValue("@bookName", textBox1.Text);
+                cmd.Parameters.AddWithValue("@bookISBN", textBox2.Text);
+                cmd.Parameters.AddWithValue("@bookAuthor", textBox3.Text);
+
+                int i = cmd.ExecuteNonQuery();
+                MessageBox.Show(i.ToString());
+            }
+            
+        }
+
     }
 }
