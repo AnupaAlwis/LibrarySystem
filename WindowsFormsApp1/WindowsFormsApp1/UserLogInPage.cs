@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
 
         private void Admin_LogIn_Submit_Button_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=" + server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
+            string connectionString = "server="+server+ ";user=" + user + ";password=" + password + ";database=" + database + ";";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string loginQuery = @"

@@ -50,15 +50,16 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=" + server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
+            string connectionString = "server="+server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string addQuery = "INSERT INTO books(book_name, book_isbn, book_author) VALUES (@bookName, @bookISBN, @bookAuthor)";
+            string addQuery = "INSERT INTO books(book_name, book_isbn, book_author,quantity,availability) VALUES (@bookName, @bookISBN, @bookAuthor, @quantity,TRUE)";
             using (MySqlCommand cmd = new MySqlCommand(addQuery, con))
             {
                 cmd.Parameters.AddWithValue("@bookName", textBox1.Text);
                 cmd.Parameters.AddWithValue("@bookISBN", textBox2.Text);
                 cmd.Parameters.AddWithValue("@bookAuthor", textBox3.Text);
+                cmd.Parameters.AddWithValue("@quantity", textBox4.Text);
 
                 int i = cmd.ExecuteNonQuery();
                 MessageBox.Show("Book Added Successfully");

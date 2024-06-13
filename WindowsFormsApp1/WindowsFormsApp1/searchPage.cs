@@ -53,8 +53,8 @@ namespace WindowsFormsApp1
                 SELECT * FROM books
                 WHERE (@book_id IS NULL OR book_id = @book_id)
                 AND (@book_name IS NULL OR book_name = @book_name)
-                AND (@book_isbn IS NULL OR book_isbn = @book_isbn)
-                AND (@book_author IS NULL OR book_author = @book_author)";
+                AND (@book_author IS NULL OR book_author = @book_author)
+                AND (@book_isbn IS NULL OR book_isbn = @book_isbn)";
 
             using (MySqlCommand cmd = new MySqlCommand(searchQuery, con))
             {
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
                 cmd.Parameters.AddWithValue("@book_name", string.IsNullOrEmpty(textBox1.Text) ? (object)DBNull.Value : textBox1.Text);
                 cmd.Parameters.AddWithValue("@book_isbn", string.IsNullOrEmpty(textBox3.Text) ? (object)DBNull.Value : textBox3.Text);
                 cmd.Parameters.AddWithValue("@book_author", string.IsNullOrEmpty(textBox2.Text) ? (object)DBNull.Value : textBox2.Text);
-
+                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -83,6 +83,11 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

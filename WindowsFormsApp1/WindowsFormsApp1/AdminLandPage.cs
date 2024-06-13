@@ -41,5 +41,11 @@ namespace WindowsFormsApp1
             AddPage addPage = new AddPage();
             addPage.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LendaBookPage lendaBookPage = new LendaBookPage();
+            lendaBookPage.Show();
+        }
     }
 }
