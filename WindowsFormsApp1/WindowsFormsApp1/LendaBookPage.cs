@@ -47,16 +47,50 @@ namespace WindowsFormsApp1
             ClearTextBoxes();
         }
 
+        private bool IsUserValid(int userId)
+        {
+            string connectionString = $"Server={server};Database={database};Uid={user};Pwd={password};";
+            string query = "SELECT COUNT(*) FROM users WHERE user_id = @userId";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while checking user validity: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            string bookId = textBox2.Text;
-            string bookName = textBox1.Text;
-            string userId = textBox3.Text;
-            string quantityStr = textBox4.Text;
+            int userId, bookId, quantity;
+            DateTime borrowedDate = DateTime.Now.Date;
+            TimeSpan borrowedTime = DateTime.Now.TimeOfDay;
+            string message = "";
 
-            if (int.TryParse(bookId, out int bookID) && int.TryParse(userId, out int userID) && int.TryParse(quantityStr, out int quantity))
+            if (int.TryParse(textBox3.Text, out userId) &&
+                int.TryParse(textBox2.Text, out bookId) &&
+                int.TryParse(textBox4.Text, out quantity))
             {
-                string connectionString = "server=" + server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
+                if (!IsUserValid(userId))
+                {
+                    MessageBox.Show("User ID is not valid.");
+                    return;
+                }
+
+                string connectionString = $"Server={server};Database={database};Uid={user};Pwd={password};";
 
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
@@ -66,15 +100,21 @@ namespace WindowsFormsApp1
 
                         MySqlCommand cmd = new MySqlCommand("LendBook", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("p_user_id", userID);
-                        cmd.Parameters.AddWithValue("p_book_id", bookID);
-                        cmd.Parameters.AddWithValue("p_quantity", quantity);
-                        cmd.Parameters.Add("p_message", MySqlDbType.VarChar);
-                        cmd.Parameters["p_message"].Direction = ParameterDirection.Output;
+
+                        // Input parameters
+                        cmd.Parameters.AddWithValue("@p_user_id", userId);
+                        cmd.Parameters.AddWithValue("@p_book_id", bookId);
+                        cmd.Parameters.AddWithValue("@p_quantity", quantity);
+                        cmd.Parameters.AddWithValue("@p_borrowed_date", borrowedDate);
+                        cmd.Parameters.AddWithValue("@p_borrowed_time", borrowedTime);
+
+                        // Output parameter for message
+                        cmd.Parameters.Add("@p_message", MySqlDbType.VarChar, 255);
+                        cmd.Parameters["@p_message"].Direction = ParameterDirection.Output;
 
                         cmd.ExecuteNonQuery();
 
-                        string message = cmd.Parameters["p_message"].Value.ToString();
+                        message = cmd.Parameters["@p_message"].Value.ToString();
                         MessageBox.Show(message);
                     }
                     catch (Exception ex)
@@ -85,10 +125,8 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Please enter valid integers for Book ID, User ID, and Quantity.");
+                MessageBox.Show("Invalid input. Please enter valid numbers.");
             }
-
-
         }
     }
 }
