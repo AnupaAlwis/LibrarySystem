@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
             string connectionString = "server="+server + ";user=" + user + ";password=" + password + ";database=" + database + ";";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string addQuery = "INSERT INTO books(book_name, book_isbn, book_author,quantity,availability) VALUES (@bookName, @bookISBN, @bookAuthor, @quantity,TRUE)";
+            string addQuery = "INSERT INTO books(book_name, book_isbn, book_author,quantity) VALUES (@bookName, @bookISBN, @bookAuthor, @quantity)";
             using (MySqlCommand cmd = new MySqlCommand(addQuery, con))
             {
                 cmd.Parameters.AddWithValue("@bookName", textBox1.Text);

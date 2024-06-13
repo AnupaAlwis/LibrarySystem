@@ -47,5 +47,11 @@ namespace WindowsFormsApp1
             LendaBookPage lendaBookPage = new LendaBookPage();
             lendaBookPage.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ReturnPage returnPage = new ReturnPage();
+            returnPage.Show();
+        }
     }
 }

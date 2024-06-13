@@ -138,6 +138,12 @@
     <Compile Include="ReaderLandingPage.Designer.cs">
       <DependentUpon>ReaderLandingPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReturnPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnPage.Designer.cs">
+      <DependentUpon>ReturnPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </Compile>
     <EmbeddedResource Include="ReaderLandingPage.resx">
       <DependentUpon>ReaderLandingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnPage.resx">
+      <DependentUpon>ReturnPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchPage.resx">
       <DependentUpon>searchPage.cs</DependentUpon>

@@ -47,3 +47,4 @@ D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\
 D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LendaBookPage.resources
+D:\BIT_Project\GITHUB\LibrarySystem\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ReturnPage.resources
