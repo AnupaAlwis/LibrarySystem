@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
                 int daysExceeded = (int)timeSpan.TotalDays - 14;
                 int fine = 0;
 
-                if (daysExceeded > -100)
+                if (daysExceeded > 0)
                 {
                     fine = daysExceeded * 100 * quantity;
                 }
