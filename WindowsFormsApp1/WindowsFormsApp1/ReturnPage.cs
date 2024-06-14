@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
 
             if (string.IsNullOrWhiteSpace(lendId))
             {
-                MessageBox.Show("Please enter a lend_id.");
+                MessageBox.Show("Please enter a lend_id.", "Missing ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 
                 if (!reader.HasRows)
                 {
-                    MessageBox.Show("lend_id is not available.");
+                    MessageBox.Show("lend_id is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     reader.Close();
                     return;
                 }
@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
                 deleteLendCmd.Parameters.AddWithValue("@lendId", lendId);
                 deleteLendCmd.ExecuteNonQuery();
 
-                MessageBox.Show(lastMessage);
+                MessageBox.Show(lastMessage,"Successfull",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
         }

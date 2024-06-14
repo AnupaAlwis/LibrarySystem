@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             {
                 if (!IsUserValid(userId))
                 {
-                    MessageBox.Show("User ID is not valid.");
+                    MessageBox.Show("User ID is not valid","ID Not Valid",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
 
@@ -119,13 +119,13 @@ namespace WindowsFormsApp1
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred: " + ex.Message);
+                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Invalid input. Please enter valid numbers.");
+                MessageBox.Show("Invalid input. Please enter valid numbers.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

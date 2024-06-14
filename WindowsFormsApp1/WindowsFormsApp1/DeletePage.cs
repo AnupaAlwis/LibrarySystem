@@ -66,11 +66,11 @@ namespace WindowsFormsApp1
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {
-                    MessageBox.Show("Book Deleted Successfully");
+                    MessageBox.Show("Book Deleted Successfully", "Delete Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No Book Found with the provided details");
+                    MessageBox.Show("No Book Found with the provided details","Not Found",MessageBoxButtons.RetryCancel,MessageBoxIcon.Question);
                 }
             }
 

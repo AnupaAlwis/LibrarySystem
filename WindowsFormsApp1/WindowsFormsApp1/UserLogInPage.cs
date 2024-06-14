@@ -48,12 +48,16 @@ namespace WindowsFormsApp1
                 {
                     AdminLandPage adminLandPage = new AdminLandPage();
                     adminLandPage.Show();
-                    MessageBox.Show("Login Successful");
+                    
+                    MessageBox.Show("Login Successful", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Redirect to the next page or perform other actions upon successful login
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password");
+                   
+                    
+                                                 
+                    MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             

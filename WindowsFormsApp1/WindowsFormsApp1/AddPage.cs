@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
                 // Book_ID is entered, check quantity
                 if (string.IsNullOrEmpty(quantityText))
                 {
-                    MessageBox.Show("Please enter the quantity.");
+                    MessageBox.Show("Please enter the quantity","Missing Data",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
 
@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
                             updateCmd.Parameters.AddWithValue("@newQuantity", newQuantity);
                             updateCmd.Parameters.AddWithValue("@bookId", bookId);
                             updateCmd.ExecuteNonQuery();
-                            MessageBox.Show("Book quantity updated successfully");
+                            MessageBox.Show("Book quantity updated successfully","Upload Successful",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         }
                         con.Close();
                         return;
@@ -98,14 +98,14 @@ namespace WindowsFormsApp1
                 }
 
                 // If book ID does not exist, show error message
-                MessageBox.Show("Book ID does not exist.");
+                MessageBox.Show("Book ID does not exist","Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
             else
             {
                 // Book_ID is not entered, check other fields
                 if (string.IsNullOrEmpty(bookName) || string.IsNullOrEmpty(bookISBN) || string.IsNullOrEmpty(bookAuthor) || string.IsNullOrEmpty(quantityText))
                 {
-                    MessageBox.Show("Please fill in all the details correctly.");
+                    MessageBox.Show("Please fill in all the details correctly","Missing Data",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
 
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
                     cmd.Parameters.AddWithValue("@quantity", quantity);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Book added successfully");
+                    MessageBox.Show("Book added successfully","Upload Successful",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
 
