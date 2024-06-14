@@ -48,7 +48,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightYellow;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.textBox1.Location = new System.Drawing.Point(326, 56);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 34);

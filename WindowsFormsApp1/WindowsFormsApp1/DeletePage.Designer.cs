@@ -61,13 +61,12 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightYellow;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.textBox1.Location = new System.Drawing.Point(282, 143);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 30);
             this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Enter Name";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
@@ -95,13 +94,12 @@
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.LightYellow;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.textBox4.Location = new System.Drawing.Point(282, 31);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(246, 30);
             this.textBox4.TabIndex = 17;
-            this.textBox4.Text = "Book Id";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DeletePage

@@ -61,13 +61,12 @@
             // UserPassword_TextBox
             // 
             this.UserPassword_TextBox.BackColor = System.Drawing.Color.LightYellow;
-            this.UserPassword_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserPassword_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.UserPassword_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserPassword_TextBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.UserPassword_TextBox.Location = new System.Drawing.Point(277, 250);
             this.UserPassword_TextBox.Name = "UserPassword_TextBox";
             this.UserPassword_TextBox.Size = new System.Drawing.Size(246, 34);
             this.UserPassword_TextBox.TabIndex = 19;
-            this.UserPassword_TextBox.Text = "Enter Password";
             this.UserPassword_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UserName_Label
@@ -84,13 +83,12 @@
             // UserName_TextBox
             // 
             this.UserName_TextBox.BackColor = System.Drawing.Color.LightYellow;
-            this.UserName_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserName_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.UserName_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName_TextBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.UserName_TextBox.Location = new System.Drawing.Point(277, 148);
             this.UserName_TextBox.Name = "UserName_TextBox";
             this.UserName_TextBox.Size = new System.Drawing.Size(246, 34);
             this.UserName_TextBox.TabIndex = 17;
-            this.UserName_TextBox.Text = "Enter User Name";
             this.UserName_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UserLogIn_Submit_Button

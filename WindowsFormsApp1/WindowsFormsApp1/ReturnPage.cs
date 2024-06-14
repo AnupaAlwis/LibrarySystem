@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,9 +23,11 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             string lendId = textBox1.Text;
+            string lastMessage = "";
 
             if (string.IsNullOrWhiteSpace(lendId))
             {
@@ -65,7 +68,7 @@ namespace WindowsFormsApp1
                 int daysExceeded = (int)timeSpan.TotalDays - 14;
                 int fine = 0;
 
-                if (daysExceeded > 0)
+                if (daysExceeded > -100)
                 {
                     fine = daysExceeded * 100 * quantity;
                 }
@@ -78,6 +81,7 @@ namespace WindowsFormsApp1
                     updateFineCmd.Parameters.AddWithValue("@fine", fine);
                     updateFineCmd.Parameters.AddWithValue("@userId", userId);
                     updateFineCmd.ExecuteNonQuery();
+                    lastMessage = "Book returned No fine needed";
                 }
                 else
                 {
@@ -85,6 +89,7 @@ namespace WindowsFormsApp1
                     MySqlCommand updateFineCmd = new MySqlCommand(updateFineQuery, conn);
                     updateFineCmd.Parameters.AddWithValue("@userId", userId);
                     updateFineCmd.ExecuteNonQuery();
+                    lastMessage = "Book Returned fine is " + fine;
                 }
 
                 // Update book's quantity
@@ -100,7 +105,7 @@ namespace WindowsFormsApp1
                 deleteLendCmd.Parameters.AddWithValue("@lendId", lendId);
                 deleteLendCmd.ExecuteNonQuery();
 
-                MessageBox.Show("Book returned successfully!");
+                MessageBox.Show(lastMessage);
             }
 
         }
