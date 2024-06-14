@@ -24,43 +24,84 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int lendId, userId;
-            if (!int.TryParse(textBox2.Text, out lendId) || !int.TryParse(textBox1.Text, out userId))
+            string lendId = textBox1.Text;
+
+            if (string.IsNullOrWhiteSpace(lendId))
             {
-                MessageBox.Show("Invalid input. Please enter valid numbers for lend ID and user ID.");
+                MessageBox.Show("Please enter a lend_id.");
                 return;
             }
 
-            string connectionString = $"Server={server};Database={database};Uid={user};Pwd={password};";
+            string connectionString = $"SERVER={server};DATABASE={database};UID={user};PASSWORD={password};";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                try
+                conn.Open();
+
+                // Check if lend_id exists
+                string checkLendIdQuery = "SELECT * FROM lends WHERE lend_id = @lendId";
+                MySqlCommand checkLendIdCmd = new MySqlCommand(checkLendIdQuery, conn);
+                checkLendIdCmd.Parameters.AddWithValue("@lendId", lendId);
+                MySqlDataReader reader = checkLendIdCmd.ExecuteReader();
+
+                if (!reader.HasRows)
                 {
-                    conn.Open();
-
-                    MySqlCommand cmd = new MySqlCommand("ProcessBookReturn", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Input parameters
-                    cmd.Parameters.AddWithValue("@p_lend_id", lendId);
-                    cmd.Parameters.AddWithValue("@p_user_id", userId);
-
-                    // Output parameter for result (optional)
-                    cmd.Parameters.Add("@p_result", MySqlDbType.VarChar, 50);
-                    cmd.Parameters["@p_result"].Direction = ParameterDirection.Output;
-
-                    cmd.ExecuteNonQuery();
-
-                    string result = cmd.Parameters["@p_result"].Value.ToString();
-                    MessageBox.Show(result);
+                    MessageBox.Show("lend_id is not available.");
+                    reader.Close();
+                    return;
                 }
-                catch (Exception ex)
+
+                // Fetch lend details
+                reader.Read();
+                int userId = reader.GetInt32("user_id");
+                int bookId = reader.GetInt32("book_id");
+                DateTime borrowedDate = reader.GetDateTime("borrowed_date");
+                int quantity = reader.GetInt32("quantity");
+                reader.Close();
+
+                // Calculate fine if applicable
+                DateTime currentDate = DateTime.Now;
+                TimeSpan timeSpan = currentDate - borrowedDate;
+                int daysExceeded = (int)timeSpan.TotalDays - 14;
+                int fine = 0;
+
+                if (daysExceeded > 0)
                 {
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    fine = daysExceeded * 100 * quantity;
                 }
+
+                // Update user's fine
+                if (fine > 0)
+                {
+                    string updateFineQuery = "UPDATE users SET fine = fine + @fine WHERE user_id = @userId";
+                    MySqlCommand updateFineCmd = new MySqlCommand(updateFineQuery, conn);
+                    updateFineCmd.Parameters.AddWithValue("@fine", fine);
+                    updateFineCmd.Parameters.AddWithValue("@userId", userId);
+                    updateFineCmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    string updateFineQuery = "UPDATE users SET fine = " + fine + " WHERE user_id = @userId";
+                    MySqlCommand updateFineCmd = new MySqlCommand(updateFineQuery, conn);
+                    updateFineCmd.Parameters.AddWithValue("@userId", userId);
+                    updateFineCmd.ExecuteNonQuery();
+                }
+
+                // Update book's quantity
+                string updateBookQuery = "UPDATE books SET quantity = quantity + @quantity WHERE book_id = @bookId";
+                MySqlCommand updateBookCmd = new MySqlCommand(updateBookQuery, conn);
+                updateBookCmd.Parameters.AddWithValue("@quantity", quantity);
+                updateBookCmd.Parameters.AddWithValue("@bookId", bookId);
+                updateBookCmd.ExecuteNonQuery();
+
+                // Delete the lend record
+                string deleteLendQuery = "DELETE FROM lends WHERE lend_id = @lendId";
+                MySqlCommand deleteLendCmd = new MySqlCommand(deleteLendQuery, conn);
+                deleteLendCmd.Parameters.AddWithValue("@lendId", lendId);
+                deleteLendCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Book returned successfully!");
             }
-
 
         }
     }
