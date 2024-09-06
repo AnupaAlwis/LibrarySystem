@@ -12,7 +12,6 @@ The **Library Management System** is a complete solution for handling book trans
 - **Book Search**: Both admins and users can search for books by title, author, or ISBN.
 - **Lend Books**: Admins can lend books to users and update the inventory automatically.
 - **Return Books**: Admins can process book returns and adjust the quantity in the database.
-- **Book Inventory Management**: The system maintains detailed records of books, including title, author, ISBN number, and the current quantity available.
 
 ## 🛠️ Core Functionalities
 
